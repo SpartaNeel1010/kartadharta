@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import maid_image from "../assets/maid-image.svg"
 import './LandingPage.css';
+import { Link } from 'react-router-dom';
 import {
     UserCheck,
     Receipt,
@@ -33,19 +34,15 @@ const LandingPage = () => {
                         <p className="sub-heading">
                             Experienced, hand-picked Professionals to serve you at your doorstep
                         </p>
-                        <div className="location-selector">
-                            <h3>Where do you need a service?</h3>
-                            <select
-                                value={selectedCity}
-                                onChange={(e) => setSelectedCity(e.target.value)}
-                                className="city-select"
-                            >
-                                <option value="" disabled>Select your city</option>
-                                <option value="delhi">Delhi</option>
-                                <option value="mumbai">Mumbai</option>
-                                <option value="bangalore">Bangalore</option>
-                            </select>
-                        </div>
+                        <Link to="/booking" className="booking-button-wrapper">
+                            <button className="booking-button">
+                                <span className="button-text">Book Now</span>
+                                <span className="button-icon">→</span>
+                            </button>
+                        </Link>
+
+
+
                     </div>
                 </div>
             </div>

@@ -84,26 +84,68 @@
     margin-bottom: 2rem;
   }
   
-  .location-selector {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    color: #000;
-    margin-bottom: 30px;
-  }
-  
-  .location-selector h3 {
-    margin-bottom: 1rem;
-  }
-  
-  .location-selector select {
+  .booking-button-wrapper {
+    display: block;
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
+    text-decoration: none;
   }
   
+  .booking-button {
+    width: 100%;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #2563eb, #3b82f6);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .booking-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+  }
+  
+  .booking-button:active {
+    transform: translateY(0);
+  }
+  
+  .button-text {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    z-index: 1;
+  }
+  
+  .button-icon {
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .booking-button:hover .button-icon {
+    transform: translateX(5px);
+  }
+  
+  .booking-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #1d4ed8, #2563eb);
+    transition: left 0.5s ease;
+  }
+  
+  .booking-button:hover::before {
+    left: 0;
+  }
   .features-section {
     padding: 4rem 2rem;
     background-color: white;
