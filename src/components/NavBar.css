@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     background-color: #000;
     position: fixed;
     width: 100%;
@@ -17,9 +17,8 @@
     gap: 0.5rem;
   }
   .logo-image {
-    width: 40px; /* Adjust size as needed */
-    height: 40px;
-    border-radius: 50%; /* Makes the image rounded */
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Makes the image rounded */
     object-fit: cover; /* Ensures the image scales properly */
     margin-right: 10px;
   }
