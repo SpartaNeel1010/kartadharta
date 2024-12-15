@@ -16,6 +16,10 @@ a{
   text-decoration: none;
 
 }
+a:focus, a:active {
+  outline: none;
+  box-shadow: none;
+} 
 body{
   margin: 0px;
 }

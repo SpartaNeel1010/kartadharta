@@ -2,9 +2,17 @@
 import React, { useState } from 'react';
 import { Person, Lock, Email, Phone, Home, LocationOn } from '@mui/icons-material';
 import './AuthPage.css';
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthProvider';
+
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const { login } = useContext(AuthContext);
+  let navigate=useNavigate()
+
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,6 +25,7 @@ const AuthPage = () => {
   });
   const [touched, setTouched] = useState({});
   const [errors, setErrors] = useState({});
+  const [error, setError] = useState("")
 
   const validateField = (name, value) => {
     switch (name) {
@@ -31,7 +40,7 @@ const AuthPage = () => {
       case 'verifyPassword':
         return value !== formData.password ? 'Passwords do not match' : '';
       case 'zipCode':
-        return !/^\d{5}(-\d{4})?$/.test(value) ? 'Invalid ZIP code' : '';
+        return !/^\d{6}$/.test(value) ? 'Invalid PIN code' : '';
       default:
         return '';
     }
@@ -69,6 +78,7 @@ const AuthPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('')
     
     // Validate all fields
     const newErrors = {};
@@ -83,22 +93,31 @@ const AuthPage = () => {
       setErrors(newErrors);
       return;
     }
+    console.log(formData)
 
     try {
-      const response = await fetch(`/api/${isLogin ? 'login' : 'signup'}`, {
+      const response = await fetch(`http://localhost:3000/user/${isLogin ? 'login' : 'register'}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
-
+      let userData=await response.json()
+      console.log(userData)
       if (response.ok) {
-        console.log('Success!');
+        login(userData)
+        console.log("logged in success")
+        console.log("navigating")
+        const redirectTo = "/booking";
+        navigate(redirectTo)
+        
       } else {
+        setError(userData.message)
         console.error('Failed to submit');
       }
     } catch (error) {
+      setError('Failed to submit')
       console.error('Error:', error);
     }
   };
@@ -253,6 +272,7 @@ const AuthPage = () => {
           <button type="submit" className="submit-button">
             {isLogin ? 'LOGIN' : 'SIGN UP'}
           </button>
+          <h6 style={{color:"red",textAlign:"center"}}>{error}</h6>
 
           
 
