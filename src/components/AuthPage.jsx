@@ -4,6 +4,7 @@ import { Person, Lock, Email, Phone, Home, LocationOn } from '@mui/icons-materia
 import './AuthPage.css';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthProvider';
+import config from './config';
 
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
@@ -96,7 +97,7 @@ const AuthPage = () => {
     console.log(formData)
 
     try {
-      const response = await fetch(`http://localhost:3000/user/${isLogin ? 'login' : 'register'}`, {
+      const response = await fetch(`${config.gcpURL}/user/${isLogin ? 'login' : 'register'}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
