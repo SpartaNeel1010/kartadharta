@@ -161,7 +161,7 @@
   
   .submit-button {
     background-color: #61dafb;
-    color: #000000;
+    color: white;
   }
   
   .submit-button:hover:not(:disabled) {
