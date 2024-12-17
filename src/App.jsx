@@ -5,7 +5,7 @@ import LandingPage from './components/LandingPage';
 import AuthPage from './components/AuthPage';
 import { AuthProvider } from './context/AuthProvider';
 import { ProtectedRoute } from './components/ProtectedRoute';
-
+import Booking from './components/Booking'
 const App = () => {
   return (
     <AuthProvider>
@@ -19,7 +19,7 @@ const App = () => {
             path="/booking"
             element={
               <ProtectedRoute>
-                booking
+                <Booking/>
               </ProtectedRoute>
             }
           />
