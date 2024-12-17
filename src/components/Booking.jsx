@@ -5,6 +5,7 @@ import './Booking.css';
 import { CalendarIcon, ClockIcon, MessageSquare, Check, ChevronDown } from 'lucide-react';
 import config from './config';
 import { AuthContext } from '../context/AuthProvider';
+import {Link} from'react-router-dom'
 
 const Booking = () => {
   const [formData, setFormData] = useState({
@@ -42,7 +43,7 @@ const Booking = () => {
     console.log(formData)
     
     try {
-      const response = await fetch(`${config.gcpURL}/appointment/create`, {
+      const response = await fetch(`${config.local}/appointment/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -179,14 +180,15 @@ const Booking = () => {
             </button>
             {errorMessage && (
               <div className="error-message">
-                <X size={16} />
+                {/* <X size={16} /> */}
                 {errorMessage}
               </div>
             )}
-            
+            <Link to="/prevbookings">
             <button type="button" className="view-bookings-button">
-              View Previous Bookings
+              View Bookings
             </button>
+            </Link>
           </div>
         </form>
       </div>

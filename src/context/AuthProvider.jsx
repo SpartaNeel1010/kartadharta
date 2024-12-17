@@ -19,6 +19,8 @@ export const AuthProvider = ({ children }) => {
       const decodedToken = jwtDecode(token);
       // const decodedToken = jwt.verify(token, secretKey);
       // const username=decodedToken.name
+      console.log("decodedToken")
+      console.log(decodedToken)
       setUser(decodedToken);
     }
     setLoading(false);

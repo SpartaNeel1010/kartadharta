@@ -1,0 +1,197 @@
+.help-page2 {
+    min-height: 100vh;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 2rem;
+    margin-top: 60px;
+  }
+  
+  .help-header2 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .help-header2 h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .help-header2 p {
+    color: #808080;
+    font-size: 1.1rem;
+  }
+  
+  .help-content2 {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* FAQ Section */
+  .faq-section2 {
+    margin-bottom: 4rem;
+  }
+  
+  .faq-section2 h2 {
+    color: #4ec9b0;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+  }
+  
+  .faq-grid2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .faq-card2 {
+    background: #252526;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: transform 0.2s ease;
+  }
+  
+  .faq-card2:hover {
+    transform: translateY(-2px);
+  }
+  
+  .faq-card2 h3 {
+    color: #569cd6;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .faq-card2 p {
+    color: #d4d4d4;
+    line-height: 1.6;
+  }
+  
+  /* Contact Section */
+  .contact-section2 h2 {
+    color: #4ec9b0;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+  }
+  
+  .contact-grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .contact-info2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .info-card2 {
+    background: #252526;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    text-align: center;
+  }
+  
+  .info-icon2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .info-card2 h3 {
+    color: #569cd6;
+    margin-bottom: 0.5rem;
+  }
+  
+  .info-card2 p {
+    color: #d4d4d4;
+    margin-bottom: 0.25rem;
+  }
+  
+  /* Contact Form */
+  .contact-form2 {
+    background: #252526;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+  }
+  
+  .contact-form2 h3 {
+    color: #4ec9b0;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+  }
+  
+  .form-group2 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group2 input,
+  .form-group2 select,
+  .form-group2 textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #d4d4d4;
+    font-size: 1rem;
+  }
+  
+  .form-group2 textarea {
+    height: 120px;
+    resize: vertical;
+  }
+  
+  .form-group2 input:focus,
+  .form-group2 select:focus,
+  .form-group2 textarea:focus {
+    outline: none;
+    border-color: #569cd6;
+  }
+  
+  .submit-button2 {
+    width: 100%;
+    padding: 1rem;
+    background: #264f78;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .submit-button2:hover {
+    background: #365f88;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 968px) {
+    .contact-grid2 {
+      grid-template-columns: 1fr;
+    }
+    
+    .help-page2 {
+      padding: 1rem;
+    }
+    
+    .help-header2 h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .faq-grid2 {
+      grid-template-columns: 1fr;
+    }
+    
+    .info-card2 {
+      padding: 1rem;
+    }
+    
+    .contact-form2 {
+      padding: 1rem;
+    }
+  }

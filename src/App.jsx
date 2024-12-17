@@ -6,6 +6,8 @@ import AuthPage from './components/AuthPage';
 import { AuthProvider } from './context/AuthProvider';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import Booking from './components/Booking'
+import PrevBookings from './components/PrevBookings';
+import HelpPage from './components/HelpPage';
 const App = () => {
   return (
     <AuthProvider>
@@ -15,6 +17,8 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/login" element={<AuthPage />} />
+          <Route exact path="/help" element={<HelpPage />} />
+          <Route exact path="/prevbookings" element={<ProtectedRoute><PrevBookings/></ProtectedRoute>} />
           <Route
             path="/booking"
             element={
