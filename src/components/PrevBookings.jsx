@@ -23,7 +23,7 @@ const PrevBookings = () => {
         // Replace with your actual API URL and user ID
         console.log(user)
         const userId=user.id // Get this from your auth context or props
-        const response = await fetch(`${config.local}/appointment/${userId}`);
+        const response = await fetch(`${config.gcpURL}/appointment/${userId}`);
         const data = await response.json();
         
         if (data.success) {

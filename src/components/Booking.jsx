@@ -43,7 +43,7 @@ const Booking = () => {
     console.log(formData)
     
     try {
-      const response = await fetch(`${config.local}/appointment/create`, {
+      const response = await fetch(`${config.gcpURL}/appointment/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
