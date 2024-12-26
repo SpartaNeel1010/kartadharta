@@ -21,11 +21,12 @@ const Booking = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
   const services = [
-    'Consultation',
-    'Check-up',
-    'Treatment',
-    'Follow-up',
-    'Specialized Service'
+    "Dish Washing",
+    "Brooming + Mopping",
+    "Bathroom Cleaning",
+    "Laundry",
+    "Iron",
+    "Housekeeping"
   ];
 
   const timeSlots = [];
